@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Shoe.Models.DBModels.Product>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<!-- Hero Section Begin -->
+    @Html.Partial("_Hero")
+    <!-- Hero Section End -->
+
+    <!-- Featured Section Begin -->
+    <section class="featured spad">
+        <div class="container">
+            <div class="male-shoe shoe">
+                <h5>Giày nam</h5>
+            </div>
+            <div class="row featured__filter">
+               
+             @foreach (var item in ViewBag.MaleProduct){
+                
+                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="@item.MainImg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="wish-list.html"><i class="fa fa-heart"></i></a></li>
+                                <li><a asp-controller="Product" asp-action="ProductDetail" asp-route-id="@item.ProductId"><i class="fa fa-retweet"></i></a></li>
+                                <li><a class="add-to-cart" onclick="addToCart( @item.ProductId )"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a asp-controller="Product" asp-action="ProductDetail" asp-route-id="@item.ProductId">@item.ProductName</a></h6>
+                            <h5>@item.Price đ</h5>
+                        </div>
+                    </div>
+                </div>
+               }
+           
+            </div>
+            <div class="see-more">
+                <a href="">xem thêm</a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="female-shoe shoe">
+                <h5>Giày nữ</h5>
+            </div>
+            <div class="row featured__filter">
+                @foreach (var item in ViewBag.FeMaleProduct){
+                <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
+                    <div class="featured__item">
+                        <div class="featured__item__pic set-bg" data-setbg="@item.MainImg">
+                            <ul class="featured__item__pic__hover">
+                                <li><a href="wish-list.html"><i class="fa fa-heart"></i></a></li>
+                                <li><a asp-controller="Product" asp-action="ProductDetail" asp-route-id="@item.ProductId"><i class="fa fa-retweet"></i></a></li>
+                                <li><a class="add-to-cart" onclick="addToCart( @item.ProductId )"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="featured__item__text">
+                            <h6><a asp-controller="Product" asp-action="ProductDetail" asp-route-id="@item.ProductId">@item.ProductName</a></h6>
+                            <h5>@item.Price đ</h5>
+                        </div>
+                    </div>
+                </div>
+               }
+            </div>
+            <div class="see-more">
+                <a href="">xem thêm</a>
+            </div>
+        </div>
+    </section>
+    <!-- Featured Section End -->
+
+    <!-- Banner Begin -->
+    @Html.Partial("_Banner")
+    <!-- Banner End -->
+
+    <!-- Latest Product Section Begin -->
+    
+    <!-- Latest Product Section End -->

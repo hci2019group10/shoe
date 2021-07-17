@@ -1,0 +1,142 @@
+﻿@model Shoe.Models.DBModels.User
+
+<header class="header" id="navbar">
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__left">
+                            <ul>
+                                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
+                                <li>Free ship cho đơn hàng trên 3 triệu đồng</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__right">
+                            <div class="header__top__right__social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+                            <div class="header__top__right__language">
+                               
+                                <div>Tiếng Việt</div>
+                                <span class="arrow_carrot-down"></span>
+                                <ul>
+                                    <li><a href="#">Tiếng Anh</a></li>
+                                    <li><a href="#">Tiếng Việt</a></li>
+                                </ul>
+                            </div>
+                            <div class="header__top__right__auth">
+                                @if(TempData["UserName"] == null){
+                                   TempData.Keep();
+                                <a asp-controller="Account" asp-action="Login"><i class="fa fa-user"></i>Đăng nhập</a>
+                                }
+                                 @if(TempData["UserName"] != null){
+                                TempData.Keep();
+                                <a asp-controller="Account" asp-action="Index" id="account-link"><i class="fa fa-user"></i>@TempData["UserName"]</a>
+                                <span class="arrow_carrot-down"></span>
+                                <ul>
+                                    <li><a asp-controller="Account" asp-action="Index">Tài khoản</a></li>
+                                    <li><a href="#">Đăng xuất</a></li>
+                                </ul>
+                                }
+                            </div>
+                            @if(TempData["UserName"] == null){
+                            TempData.Keep();
+                            <div class="header__top__right__auth">
+                                <a  asp-controller="Account" asp-action="Login"><i class="fa fa-user"></i>Đăng ký</a>
+                                
+                            </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="container">
+                <div class="row fix">
+                    <div class="col-lg-3">
+                        <div class="header__logo logo">
+                            <a asp-controller="Home" asp-action="Index"><img src="~/user/img/logo.png" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <nav class="header__menu">
+                            <ul>
+                                <li><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
+                                <li><a asp-controller="Product" asp-action="ListProduct" asp-route-keywork="Nam">Giày Nam</a>
+                                    <ul class="header__menu__dropdown">
+                                        <li><a href="dog-blog.html">Sandal</a></li>
+                                        <li><a href="dog-blog.html">Thể thao</a></li>
+                                        <li><a href="dog-blog.html">Boot</a></li>
+                                    </ul>
+                                </li>
+                                <li><a asp-controller="Product" asp-action="ListProduct" asp-route-keywork="Nữ">Giày Nữ</a>
+                                    <ul class="header__menu__dropdown">
+                                        <li><a href="cat-blog.html">Thể thao</a></li>
+                                        <li><a href="cat-blog.html">Cao gót</a></li>
+                                        <li><a href="cat-blog.html">Búp bê</a></li>
+                                    </ul>
+                                </li>
+                                <li><a asp-controller="Contatc" asp-action="Index">Liên hệ</a></li>
+                     
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="header__cart">
+                            <ul>
+                                <li><a href="wish-list.html"><i class="fa fa-heart"></i> <span>1</span></a></li>
+                                <div class="cart">
+                                    <li><a asp-controller="Cart" asp-action="Index"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                                    <div class="list">
+
+                                        <div class="shopping-cart-header">
+                                            <li><a><i class="fa fa-shopping-bag" id="cart-icon"></i> <span>3</span></a></li>
+                                            <div class="shopping-cart-total">
+                                                <span class="lighter-text">Total:</span>
+                                                <span class="main-color-text">$2,229.97</span>
+                                            </div>
+                                        </div>
+                                        <!--end shopping-cart-header -->
+
+                                        <ul class="shopping-cart-items">
+                                            <li class="clearfix">
+                                                <img src="~/user/img/products/boot/boot-1.jpg" alt="item1" />
+                                                <div>
+                                                    <span class="item-name">Alaska khổng lồ (Giant)</span>
+                                                    <span class="delete-btn">Xóa</span>
+                                                </div>
+                                                <div>
+                                                    <span class="item-price">$849.99</span>
+                                                    <span class="item-quantity">Số lượng: 01</span>
+                                                </div>
+
+                                        </ul>
+
+                                        <a asp-controller="Cart" asp-action="Index" class="checkout-button">Xem giỏ hàng</a>
+
+                                    </div>
+                                </div>
+                                 <div class="search">
+                                    <i class="fa fa-search"></i>
+                                    <form asp-controller="Product" asp-action="Search" method="get">
+                                        <input type="text" placeholder="Tìm kiếm" name="keyword">
+                                    </form>
+                                </div>  
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="humberger__open">
+                    <i class="fa fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    
+    </header>

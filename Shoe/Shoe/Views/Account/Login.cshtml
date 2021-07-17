@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}
+
+		<!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <div class="breadcrumb__option">
+                            <a  asp-controller="Home" asp-action="Index">Trang chủ</a>
+							<a  asp-controller="Account" asp-action="Index">Trang chủ</a>
+                            <span>Đăng nhập</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+	<section class="product spad">
+		<div class="container">
+            <div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<div id="login" class="user_box">
+						<div class ="errorMessage">@ViewBag.Error</div>
+						<h1 class="account-title">Đăng Nhập</h1>
+						<form accept-charset="UTF-8" asp-controller="Account" asp-action="DoLogin" id="create_customer" method="post" name="loginForm">
+							<input name="form_type" type="hidden" value="create_customer">
+							<input name="utf8" type="hidden" value="✓">
+
+								<div class="clearfix large_form m-b-15">
+									<label  class="label icon-field"><i class="fa fa-envelope-o" aria-hidden="true"></i></label>
+									<input required="" type="email" value="" placeholder="Email" name="Email" id="email" class="text" size="30">
+								</div>
+								<div class="clearfix large_form m-b-15">
+									<label  class="label icon-field"><i class="fa fa-lock" aria-hidden="true"></i></label>
+									<input required="" type="password" value="" placeholder="Mật khẩu" name="Password" id="password" class="password text" size="30">
+								</div>
+								<div class="action_bottom m-b-15">
+									<input class="btn btn-signin" type="submit" value="Đăng nhập">
+								</div>
+								<div class="req_pass text-center">
+									<a href="" title="Đăng ký">Chưa có tài khoản? Đăng ký</a>
+								</div>
+								<div class="req_pass text-center">
+									<a href="#">Quên mật khẩu?</a>
+								</div>
+
+								<input id="419ba18959134543b447c111c5e30a96" name="g-recaptcha-response" type="hidden" value="03AGdBq26VK8mLxq8l7BgcltAjHPZMNq5XhawgfRm-psn4ht7vKxk3iyZsWQgW1kckgEOXzExFOHqs9Qq8RSqZfwpw2ctr3K7j2QRYoqyozhjmdhd37_bZoRZqi7pRhfWFP8xTUQnTAAhUE569LoJP6guE-1K3tjdYiVU9Ppx9JeFXWaO3JBj4rmjuD5xv08xsdVw-HpiTqP9tI9W5_PuqOAJvXFyNK4X7ZbRwGJTa7YFv55hdPE30AZPJaZ3HLGaFpaV36Kz6NJ2p5XPJYWI_-aLhbfpaGRl2FUNfFy9KHnYulnLPkyb7NG19L3xJk8s8hX3VU-Lye2QAd1kOY0KxI1HRlNBToHil6crEkvhpO3attlJO2CUCwXdsl2qzSm3x9GToOy62fbbA4-_Yn6oaER9OSUaHhl4scD-pdMV9A9aa0pHsHSb-Vsql0Doqs8GnwddyOaezsvDneHp-Tn280tFeJRvrusImKdx-MGB5DdMB59rMhOLdgGnwG2i_w20_pRK_kq170CYq"><script src="https://www.google.com/recaptcha/api.js?render=6LdD18MUAAAAAHqKl3Avv8W-tREL6LangePxQLM-"></script><script>grecaptcha.ready(function() {grecaptcha.execute('6LdD18MUAAAAAHqKl3Avv8W-tREL6LangePxQLM-', {action: 'submit'}).then(function(token) {document.getElementById('419ba18959134543b447c111c5e30a96').value = token;});});</script>
+						</form>
+						<div class="face-btn" id="btn-facebook-login">
+							<img src="//theme.hstatic.net/1000230642/1000679613/14/fb-btn.png?v=1056" alt="google login - bitis">
+							<span>Đăng nhập bằng Facebook</span>
+						</div>
+						<div class="google-btn" id="btn-google-login">
+							<img src="//theme.hstatic.net/1000230642/1000679613/14/google-btn.png?v=1056" alt="google login - bitis">
+							<span>Đăng nhập bằng Google</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	
+

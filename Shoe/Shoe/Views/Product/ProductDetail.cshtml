@@ -1,0 +1,235 @@
+﻿
+@{
+    ViewData["Title"] = "ProductDetail";
+}
+<!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <div class="breadcrumb__option">
+                            <a  asp-controller="Home" asp-action="Index">Trang chủ</a>
+                            <a href="./index.html">@ViewBag.Detail.Gender</a>
+                            <a href="./index.html"></a>
+                            <span> @ViewBag.Detail.ProductName</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+ <!-- Product Details Section Begin -->
+    <section class="product-details spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="product__details__pic">
+                        <div class="product__details__pic__item">
+                            <img class="product__details__pic__item--large"
+                                src="@ViewBag.Detail.MainImg" alt="">
+                        </div>
+                        <div class="product__details__pic__slider owl-carousel">
+                            <img data-imgbigurl="@ViewBag.Detail.Img1"
+                                src="@ViewBag.Detail.Img1" alt="">
+                            <img data-imgbigurl="@ViewBag.Detail.Img2"
+                                src="@ViewBag.Detail.Img2" alt="">
+                            <img data-imgbigurl="@ViewBag.Detail.Img3"
+                                src="@ViewBag.Detail.Img3" alt="">
+                            <img data-imgbigurl="@ViewBag.Detail.Img3"
+                                src="@ViewBag.Detail.Img3" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="product__details__text">
+                        <h3>@ViewBag.Detail.ProductName</h3>
+                        <div class="product__details__rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                            <span>(18 đánh giá)</span>
+                        </div>
+                        <div class="product__details__price">@ViewBag.Detail.Price đ</div>
+                        <p>- Màu sắc: @ViewBag.Detail.Color</p>
+                        <div class="size"></div>
+                        <p>- Tình trạng: </p>
+                        <div class="product__details__quantity">
+                            <div class="quantity">
+                                <div class="pro-qty">
+                                    <input type="text" value="1">
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="primary-btn">Thêm vào giỏ hàng</a>
+                        <a href="#" class="heart-icon"><span class="icon_heart_alt"></span></a>
+                        <ul>
+                            <li><b>Tình trạng</b> <span>Còn hàng</span></li>
+                            <li><b>Vận chuyển</b> <span>Trong 1 ngày <samp></samp></span></li>
+                            <li><b>Chia sẻ</b>
+                                <div class="share">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="product__details__tab">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab"
+                                    aria-selected="true">Mô tả</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab"
+                                    aria-selected="false">Nhận xét <span>(1)</span></a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                                <div class="product__details__tab__desc">
+                                    <h6>Mô tả</h6>
+                                    <p></p>
+                                </div>
+                            </div>
+                            
+                            <div class="tab-pane" id="tabs-2" role="tabpanel">
+                                <div class="product__details__tab__desc">
+                                    <div class="container bootstrap snippets bootdey">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="blog-comment">
+                                                    <p>4 bình luận</p>
+                                                    <hr/>
+                                                    <ul class="comments">
+                                                        <li class="clearfix">
+                                                        <img src="user/img/products/boot/boot-1.jpg" class="avatar" alt="">
+                                                        <div class="post-comments">
+                                                            <p class="meta">2/2/2020, JohnDoe: <i class="pull-right"><a href="#"><small>Trả lời</small></a></i></p>
+                                                            <p>
+                                                                Đẹp quá ạ
+                                                            </p>
+                                                        </div>
+                                                        </li>
+                                                        <li class="clearfix">
+                                                        <img src="user/img/products/boot/boot-1.jpg" class="avatar" alt="">
+                                                        <div class="post-comments">
+                                                            <p class="meta">3/2/2020, Jack: <i class="pull-right"><a href="#"><small>Trả lời</small></a></i></p>
+                                                            <p>
+                                                               Dễ thương quá shop
+                                                            </p>
+                                                        </div>
+                                                        
+                                                        <ul class="comments">
+                                                            <li class="clearfix">
+                                                                <img src="user/img/products/boot/boot-1.jpg" class="avatar" alt="">
+                                                                <div class="post-comments">
+                                                                    <p class="meta">3/2/2020 admin : <i class="pull-right"><a href="#"><small>Reply</small></a></i></p>
+                                                                    <p>
+                                                                        Shop xin cảm ơn
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                        </li>
+                                                    </ul>
+                                                    <textarea class="form-control" placeholder="Viết bình luận" rows="3"></textarea>
+                                                    <br>
+                                                    <button type="button" class="btn btn-info pull-right">Post</button>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product Details Section End -->
+<!-- Related Product Section Begin -->
+    <section class="related-product">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title related__product__title">
+                        <h2>Thú cưng liên quan</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="user/img/products/boot/boot-1.jpg">
+                            <ul class="product__item__pic__hover">
+                                <li><a href="wish-list.html"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="shop-details.html"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="shoping-cart.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="shop-details.html">Phóc sóc trắng 02</a></h6>
+                            <h5>7.000.000đ</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="user/img/products/boot/boot-1.jpg">
+                            <ul class="product__item__pic__hover">
+                                <li><a href="wish-list.html"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="shop-details.html"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="shoping-cart.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="shop-details.html">Poodle mơ 02</a></h6>
+                            <h5>5.000.000đ</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="user/img/products/boot/boot-1.jpg">
+                            <ul class="product__item__pic__hover">
+                                <li><a href="wish-list.html"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="shop-details.html"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="shoping-cart.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="shop-details.html">Corgi vàng 05</a></h6>
+                            <h5>15.000.000đ</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="product__item">
+                        <div class="product__item__pic set-bg" data-setbg="user/img/products/boot/boot-1.jpg">
+                            <ul class="product__item__pic__hover">
+                                <li><a href="wish-list.html"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="shop-details.html"><i class="fa fa-retweet"></i></a></li>
+                                <li><a href="shoping-cart.html"><i class="fa fa-shopping-cart"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="product__item__text">
+                            <h6><a href="shop-details.html">Pomeranian vàng 06</a></h6>
+                            <h5>9.000.000đ</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Related Product Section End -->
+
